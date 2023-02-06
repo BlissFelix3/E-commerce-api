@@ -66,4 +66,6 @@ ReviewSchema.post('remove', async function () {
   await this.constructor.calculateAverageRating(this.product);
 });
 
-module.exports = mongoose.model('Review', ReviewSchema);
+const reviewModel = mongoose.model("Review", ReviewSchema);
+
+module.exports = { reviewModel };

@@ -81,4 +81,6 @@ ProductSchema.pre('remove', async function (next) {
   await this.model('Review').deleteMany({ product: this._id });
 });
 
-module.exports = mongoose.model('Product', ProductSchema);
+const productModel = mongoose.model("Product", ProductSchema);
+
+module.exports = { productModel };
